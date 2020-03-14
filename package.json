@@ -1,0 +1,28 @@
+{
+    "name": "theiris-autoupdate",
+    "version": "1.0.0",
+    "description": "this is thiris autoupdate",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/themages/theiris-autoupdate.git"
+    },
+    "keywords": [
+        "koa-server"
+    ],
+    "author": "zengxingqi",
+    "license": "GPL3.0",
+    "bugs": {
+        "url": "https://github.com/themages/theiris-autoupdate/issues"
+    },
+    "homepage": "https://github.com/themages/theiris-autoupdate#readme",
+    "dependencies": {
+        "compare-versions": "^3.6.0",
+        "koa": "^2.11.0",
+        "koa-router": "^8.0.8",
+        "koa-static-server": "^1.4.0"
+    }
+}
