@@ -16,7 +16,7 @@ function getNewVersions(version) {
     if (compareVerisons.compare(package.version, version, ">")) {
         return package;
     }
-    return null
+    return null;
 }
 
 router.get("/darwin", (ctx, next) => {
@@ -26,7 +26,21 @@ router.get("/darwin", (ctx, next) => {
         ctx.body = newVersion;
     } else {
         ctx.status = 204;
-    }
+    };
+});
+
+router.get("/win32", (ctx, next) => {
+    let { version } = ctx.query;
+    let newVersion = getNewVersions(version);
+    if (newVersion) {
+        ctx.body = newVersion;
+    } else {
+        ctx.status = 204;
+    };
+});
+
+router.get("/win32/*.nupkg", (ctx, next) => {
+    ctx.redirect(`/public/${ctx.params[0]}.nupkg`);
 });
 
 app.use(server({rootDir: "public", rootPath: "/public"})).use(router.routes()).use(router.allowedMethods()).listen(9999);
