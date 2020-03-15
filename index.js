@@ -2,8 +2,10 @@ const Koa = require("koa");
 const Router = require("koa-router");
 const server = require("koa-static-server");
 const compareVerisons = require("compare-versions");
+const multer = require("koa-multer");
 const app = new Koa();
 const router = new Router();
+const uploadCrash = multer({dest: "crash/"})
 
 function getNewVersions(version) {
     if (!version) return;
@@ -18,6 +20,10 @@ function getNewVersions(version) {
     }
     return null;
 }
+
+router.post("/crash", uploadCrash.single("upload_file_minidump"), (ctx, next) => {
+    // ctx.req.body 存DB
+})
 
 router.get("/darwin", (ctx, next) => {
     let { version } = ctx.query;
