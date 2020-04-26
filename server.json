@@ -1,0 +1,10 @@
+{
+    "apps": [{
+        "name": "autoupdate",
+        "script": "./index.js",
+        "error_file": "./logs/autoupdate.err.log",
+        "out_file": "./logs/autoupdate.out.log",
+        "log_date_format" : "YYYY-MM-DD HH:mm Z",
+        "watch": false
+    }]
+}

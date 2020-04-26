@@ -10,10 +10,10 @@ const uploadCrash = multer({dest: "crash/"})
 function getNewVersions(version) {
     if (!version) return;
     const package = {
-        version: "1.0.1",
+        version: "1.0.0",
         pub_date: "2020-03-14T17:59:00+8:00",
         notes: "无",
-        url: "http://127.0.0.1:9999/public/theiris-1.0.1-mac.zip",
+        url: "http://120.24.162.36:9999/public/theiris-1.0.0-mac.zip",
     };
     if (compareVerisons.compare(package.version, version, ">")) {
         return package;
